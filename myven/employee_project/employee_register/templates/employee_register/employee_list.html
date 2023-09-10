@@ -1,0 +1,35 @@
+{% extends 'employee_register/base.html' %}
+{% block content %}
+<h4 class="text-primary text-bold">List of Employees</h4>
+<table class="table">
+    <thead>
+      <tr>
+        {% comment %} <th scope="col">Id</th> {% endcomment %}
+        <th scope="col">Full Name</th>
+        <th scope="col">Position</th>
+        <th scope="col">Contact Number</th>
+        <th scope="col">Employee Code</th>
+        
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for emp in data %}
+      <tr>
+      
+        {% comment %} <th scope="row">{{emp.id}}</th> {% endcomment %}
+        <td>{{emp.fullName}}</td>
+        <td>{{emp.position}}</td>
+        <td>{{emp.mobileNumb}}</td>
+        <td>{{emp.emp_code}}</td>
+        <td>
+            <a href="{% url 'edit_employee' emp.id %}" class="btn btn-secondary">Edit</a>
+            <a href="{% url 'delete_employee' emp.id %}" class="btn btn-danger">Delete</a>
+        </td>
+      </tr>
+      {% endfor %}
+    
+    </tbody>
+  </table>
+
+{% endblock %}

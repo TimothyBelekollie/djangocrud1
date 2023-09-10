@@ -1,0 +1,38 @@
+{% extends 'employee_register/base.html' %}
+
+
+{% comment %} {%load crispy_forms_tags %}
+{% load static %} {% endcomment %}
+{% block content %}
+
+<form action="" method="POST" autocomplete="off">
+     {% csrf_token %}
+    
+    {{ form.as_p}} 
+     {% comment %} <div class="mb-3">
+          <label  class="form-label" for="id_fullName">Full Name</label>
+          <input type="text" class="form-control" id="id_fullName" name="fullName" placeholder="Enter your Name"required maxlength="200">
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="id_mobileNumb">Mobile Number</label>
+          <input type="text" class="form-control"name="mobileNumb" id="id_mobileNumb" placeholder="Enter your mobile number" required maxlength="15">
+        </div>
+        <div class="mb-3">
+          
+          <label for="id_emp_code">Emp code:</label>
+          <input type="text" class="form-control" name="emp_code" id="id_emp_code" placeholder="Enter your Employee Code" maxlength="3" required />
+          
+        </div>
+        <div class="mb-3">
+          
+          <label for="id_position" class="form-label">Position:</label>
+             <select name="position" class="form-control" required="" id="id_position">
+               <option value="" selected="">---------</option>
+             
+             </select>
+        </div> {% endcomment %}
+        <div class="mb-3">
+        <button class="btn btn-primary" type="submit">Submit</button> 
+        </div>
+</form>
+{% endblock %}
